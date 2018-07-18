@@ -2,6 +2,8 @@
 
 基于bootnodes以太坊私有网络节点的部署添加
 
+**TODO** 通过keystore导入账号
+
 ## Usage
 
 ### genesis.json

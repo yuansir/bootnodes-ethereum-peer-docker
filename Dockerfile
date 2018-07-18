@@ -1,0 +1,22 @@
+FROM ubuntu:latest
+
+ENV NODE_NAME   node1
+ENV DATA_DIR    /root/.ethereum
+ENV BOOTNODES_URL  enode://607dc71772bf3955e66a4df21d471df319f4fb61631e3c1ba5ef41309999d8cc77cd2a0f0ff236de69425801af9e445ad23ad46a03cfce82058d44a2dbd2d099@192.168.20.162:30310
+ENV PORT    30311
+ENV RPC_PORT    8501
+ENV NETWORKID    1024
+
+ADD . /app
+
+WORKDIR /app
+
+RUN chmod +x /app/geth
+
+RUN chmod +x /app/run.sh
+
+EXPOSE 8501
+
+EXPOSE 30311
+
+ENTRYPOINT [ "/app/run.sh" ]
